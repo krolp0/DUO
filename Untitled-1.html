@@ -135,47 +135,7 @@
 
         <p>© 2023 DJ Duo. Wszystkie prawa zastrzeżone.</p>
     </footer>
-<script>
-    function showModal(modalId) {
-        document.getElementById(modalId).style.display = 'block';
-    }
 
-    window.onclick = function(event) {
-        if (event.target.classList.contains('img-modal')) {
-            event.target.style.display = 'none';
-        }
-    }
-</script>
-<script>
-    new SimpleLightbox('[data-lightbox]', {
-        /* tutaj możesz dodać opcjonalne ustawienia, jeśli chcesz dostosować zachowanie lightbox */
-    });
-</script>
-<script>
-const header = document.querySelector("header");
-let lastScrollTop = 0;
-
-window.addEventListener("scroll", function() {
-    let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScrollTop > lastScrollTop && currentScrollTop > header.offsetHeight) {
-        // Jeśli użytkownik przewija w dół i jest poniżej nagłówka, częściowo ukryj nagłówek
-        header.classList.add("header-hidden");
-    } else {
-        // W przeciwnym razie pokaż nagłówek
-        header.classList.remove("header-hidden");
-    }
-
-    if (currentScrollTop > 10) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
-
-    lastScrollTop = currentScrollTop;
-});
-
-</script>
 </body>
 
 </body>
