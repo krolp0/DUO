@@ -3,128 +3,111 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #121212; /* dark background for contrast */
     color: #ffffff; /* white text for readability */
-    padding-top: 70px; /* Add padding to the top of the body to avoid content being hidden behind the fixed navbar */
+    padding-top: 70px; /* Adjust based on navbar height on mobile */
     margin: 0; /* Removes default margin */
+    overflow-x: hidden; /* Prevents horizontal scroll */
 }
 
 /* Navbar styles */
 .navbar {
-    position: fixed; /* Makes the navbar fixed at the top */
-    top: 0; /* Align top edge of navbar to top edge of the viewport */
-    left: 0; /* Align left edge of navbar to left edge of the viewport */
-    width: 100%; /* Ensure the navbar spans the full width of the viewport */
+    position: fixed; /* Keeps the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    justify-content: center; /* Center-align the navbar content */
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-    background-color: #1a1a1a; /* slightly lighter dark shade for navbar */
-    z-index: 1000; /* Ensures navbar stays on top of other content */
-    transition: padding 0.3s ease; /* Smooth transition for padding changes */
+    padding: 10px; /* Reduced padding on mobile for better space utilization */
+    background-color: #1a1a1a;
+    z-index: 1000;
+    transition: padding 0.3s ease;
 }
 
 .navbar ul {
     list-style: none;
     padding: 0;
-    display: flex; /* Ensure the list is in line */
-    justify-content: center; /* Center-align the list items */
-    margin: 0; /* Removes default margin */
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    flex-wrap: wrap; /* Allows navbar items to wrap on smaller screens */
 }
 
 .navbar ul li {
-    display: inline;
-    margin: 0 20px; /* Symmetrical spacing for visual balance */
+    margin: 5px 10px; /* Reduced margin on mobile for tighter navigation */
 }
 
 .navbar ul li a {
-    color: #DAA520; /* Golden color for links */
+    color: #DAA520;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 14px; /* Smaller font size for mobile */
 }
 
 .navbar-logo {
-    height: 50px; /* Adjust size as needed */
-    transition: height 0.3s ease; /* Smooth transition for resizing */
-    width: auto; /* Maintain aspect ratio */
+    height: 40px; /* Smaller logo on mobile */
+    transition: height 0.3s ease;
+    width: auto;
 }
 
-/* Social media links */
+/* Social media links - adjust for visibility and tap targets */
 .social-media a {
     color: #ffffff;
-    margin-left: 10px;
+    margin: 0 5px; /* Smaller margin */
+    font-size: 24px; /* Larger icons for easier tapping */
 }
 
 /* Section styles */
 section {
-    padding: 40px;
-    border-bottom: 1px solid #333333; /* subtle separation between sections */
+    padding: 20px; /* Reduced padding for sections on mobile */
 }
 
 section h2 {
-    color: #DAA520; /* matching the link color for consistency */
+    font-size: 20px; /* Smaller headings on mobile */
 }
 
-/* Photo grid styles */
+/* Photo grid styles - adjust to stack images on smaller screens */
 .photos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* More flexible grid layout */
 }
 
 .photos img {
-    width: 100%;
-    border-radius: 10px; /* soft rounded corners for images */
+    border-radius: 5px; /* Smaller border-radius for a subtler effect on mobile */
 }
 
 /* Contact and footer styles */
 #Kontakt, footer {
-    background-color: #1a1a1a; /* dark background for footer and contact section */
-    text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
 
 footer p {
-    margin: 0;
-    color: #DAA520; /* Golden text to highlight the footer */
+    font-size: 12px; /* Smaller footer text */
 }
 
-/* Form styles */
+/* Form styles - more mobile-friendly layout */
 form div {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+    font-size: 14px; /* Larger font size for better readability */
 }
 
 input[type="text"], input[type="email"], textarea {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+    font-size: 14px; /* Larger font size for better readability */
 }
 
 input[type="submit"] {
-    background-color: #DAA520;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for button hover */
+    font-size: 14px;
 }
 
-input[type="submit"]:hover {
-    background-color: #b38600; /* darker golden on hover */
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column; /* Stack the links vertically on smaller screens */
-        align-items: center; /* Ensure items are centered in vertical stack */
+/* Media Queries for very small screens */
+@media (max-width: 480px) {
+    .navbar ul li {
+        margin: 3px; /* Even tighter margins for very small devices */
+    }
+    .navbar ul li a {
+        font-size: 12px; /* Smaller font size for very small screens */
     }
     .navbar-logo {
-        height: 30px; /* Adjust logo size for smaller screens */
+        height: 30px; /* Even smaller logo for very small screens */
     }
 }
