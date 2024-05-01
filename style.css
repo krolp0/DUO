@@ -12,6 +12,7 @@ body {
     align-items: center;
     padding: 20px;
     background-color: #1a1a1a; /* slightly lighter dark shade for navbar */
+    transition: padding 0.3s ease; /* Smooth transition for padding changes */
 }
 
 .navbar ul {
@@ -31,7 +32,9 @@ body {
 }
 
 .navbar-logo {
-    height: 50px; /* adjust size as needed */
+    height: 50px; /* Initial height */
+    transition: height 0.3s ease; /* Smooth transition for resizing */
+    width: auto; /* Maintain aspect ratio */
 }
 
 /* Social media links */
@@ -98,16 +101,16 @@ input[type="submit"] {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for button hover */
 }
-.navbar {
-    transition: padding 0.3s;
-}
-
-.navbar-logo {
-    transition: height 0.3s;
-}
-
 
 input[type="submit"]:hover {
     background-color: #cc7a00; /* darker orange on hover */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .navbar-logo {
+        height: 30px; /* Adjust logo size for smaller screens */
+    }
 }
