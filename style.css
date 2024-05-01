@@ -15,99 +15,124 @@ body {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Aligns navbar content */
     align-items: center;
-    padding: 10px; /* Reduced padding on mobile for better space utilization */
+    padding: 20px;
     background-color: #1a1a1a;
-    z-index: 1000;
+    z-index: 1000; /* Ensures navbar stays on top of other content */
     transition: padding 0.3s ease;
 }
 
 .navbar ul {
     list-style: none;
-    padding: 0;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    padding: 0;
     margin: 0;
-    flex-wrap: wrap; /* Allows navbar items to wrap on smaller screens */
 }
 
 .navbar ul li {
-    margin: 5px 10px; /* Reduced margin on mobile for tighter navigation */
+    padding: 0 10px;
 }
 
 .navbar ul li a {
-    color: #DAA520;
+    color: #DAA520; /* Golden color for links */
     text-decoration: none;
-    font-size: 14px; /* Smaller font size for mobile */
+    font-weight: bold;
 }
 
-.navbar-logo {
-    height: 40px; /* Smaller logo on mobile */
-    transition: height 0.3s ease;
-    width: auto;
+/* Mobile menu icon */
+.menu-icon {
+    display: none; /* Hidden by default, shown below in media query */
+    font-size: 30px; /* Set icon size */
+    cursor: pointer;
+    color: #ffffff;
 }
 
-/* Social media links - adjust for visibility and tap targets */
+/* Social media links */
 .social-media a {
     color: #ffffff;
-    margin: 0 5px; /* Smaller margin */
-    font-size: 24px; /* Larger icons for easier tapping */
+    margin: 0 10px;
+    font-size: 24px; /* Icons size */
 }
 
 /* Section styles */
 section {
-    padding: 20px; /* Reduced padding for sections on mobile */
+    padding: 40px;
+    border-bottom: 1px solid #333333; /* Subtle separation between sections */
 }
 
 section h2 {
-    font-size: 20px; /* Smaller headings on mobile */
+    color: #DAA520;
 }
 
-/* Photo grid styles - adjust to stack images on smaller screens */
+/* Photo grid styles */
 .photos {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* More flexible grid layout */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .photos img {
-    border-radius: 5px; /* Smaller border-radius for a subtler effect on mobile */
+    width: 100%;
+    border-radius: 10px;
 }
 
 /* Contact and footer styles */
 #Kontakt, footer {
-    padding: 10px;
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
 }
 
 footer p {
-    font-size: 12px; /* Smaller footer text */
+    margin: 0;
+    color: #DAA520;
 }
 
-/* Form styles - more mobile-friendly layout */
+/* Form styles */
 form div {
     margin-bottom: 10px;
 }
 
 label {
-    font-size: 14px; /* Larger font size for better readability */
+    display: block;
+    margin-bottom: 5px;
 }
 
 input[type="text"], input[type="email"], textarea {
-    font-size: 14px; /* Larger font size for better readability */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
 }
 
 input[type="submit"] {
-    font-size: 14px;
+    background-color: #DAA520;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Media Queries for very small screens */
-@media (max-width: 480px) {
-    .navbar ul li {
-        margin: 3px; /* Even tighter margins for very small devices */
+input[type="submit"]:hover {
+    background-color: #b38600; /* darker golden on hover */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Hide navbar links on mobile until toggled */
+        flex-direction: column;
+        width: 100%;
     }
-    .navbar ul li a {
-        font-size: 12px; /* Smaller font size for very small screens */
+
+    .menu-icon {
+        display: block; /* Show menu icon on mobile */
     }
-    .navbar-logo {
-        height: 30px; /* Even smaller logo for very small screens */
+
+    .nav-links {
+        display: none; /* Ensure links are hidden by default on mobile */
     }
 }
