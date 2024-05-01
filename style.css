@@ -3,15 +3,22 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #121212; /* dark background for contrast */
     color: #ffffff; /* white text for readability */
+    padding-top: 70px; /* Add padding to the top of the body to avoid content being hidden behind the fixed navbar */
+    margin: 0; /* Removes default margin */
 }
 
 /* Navbar styles */
 .navbar {
+    position: fixed; /* Makes the navbar fixed at the top */
+    top: 0; /* Align top edge of navbar to top edge of the viewport */
+    left: 0; /* Align left edge of navbar to left edge of the viewport */
+    width: 100%; /* Ensure the navbar spans the full width of the viewport */
     display: flex;
     justify-content: center; /* Center-align the navbar content */
     align-items: center;
     padding: 20px;
     background-color: #1a1a1a; /* slightly lighter dark shade for navbar */
+    z-index: 1000; /* Ensures navbar stays on top of other content */
     transition: padding 0.3s ease; /* Smooth transition for padding changes */
 }
 
@@ -20,13 +27,12 @@ body {
     padding: 0;
     display: flex; /* Ensure the list is in line */
     justify-content: center; /* Center-align the list items */
-    width: 100%; /* Take full width to distribute space */
+    margin: 0; /* Removes default margin */
 }
 
 .navbar ul li {
     display: inline;
-    margin-right: 20px;
-    margin-left: 20px; /* Equal spacing on both sides for symmetry */
+    margin: 0 20px; /* Symmetrical spacing for visual balance */
 }
 
 .navbar ul li a {
@@ -36,7 +42,7 @@ body {
 }
 
 .navbar-logo {
-    height: 50px; /* Initial height */
+    height: 50px; /* Adjust size as needed */
     transition: height 0.3s ease; /* Smooth transition for resizing */
     width: auto; /* Maintain aspect ratio */
 }
@@ -45,7 +51,6 @@ body {
 .social-media a {
     color: #ffffff;
     margin-left: 10px;
-    margin-right: 10px; /* Added for symmetry */
 }
 
 /* Section styles */
@@ -55,7 +60,7 @@ section {
 }
 
 section h2 {
-    color: #DAA520; /* Golden color to match links */
+    color: #DAA520; /* matching the link color for consistency */
 }
 
 /* Photo grid styles */
@@ -115,11 +120,11 @@ input[type="submit"]:hover {
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
-    .navbar-logo {
-        height: 30px; /* Adjust logo size for smaller screens */
-    }
     .navbar ul {
         flex-direction: column; /* Stack the links vertically on smaller screens */
         align-items: center; /* Ensure items are centered in vertical stack */
+    }
+    .navbar-logo {
+        height: 30px; /* Adjust logo size for smaller screens */
     }
 }
