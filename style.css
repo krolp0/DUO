@@ -99,6 +99,14 @@ input[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
 }
+.navbar {
+    transition: padding 0.3s;
+}
+
+.navbar-logo {
+    transition: height 0.3s;
+}
+
 
 input[type="submit"]:hover {
     background-color: #cc7a00; /* darker orange on hover */
