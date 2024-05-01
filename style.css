@@ -8,7 +8,7 @@ body {
 /* Navbar styles */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center-align the navbar content */
     align-items: center;
     padding: 20px;
     background-color: #1a1a1a; /* slightly lighter dark shade for navbar */
@@ -18,15 +18,19 @@ body {
 .navbar ul {
     list-style: none;
     padding: 0;
+    display: flex; /* Ensure the list is in line */
+    justify-content: center; /* Center-align the list items */
+    width: 100%; /* Take full width to distribute space */
 }
 
 .navbar ul li {
     display: inline;
     margin-right: 20px;
+    margin-left: 20px; /* Equal spacing on both sides for symmetry */
 }
 
 .navbar ul li a {
-    color: #ff9900; /* vibrant orange for links */
+    color: #DAA520; /* Golden color for links */
     text-decoration: none;
     font-weight: bold;
 }
@@ -41,6 +45,7 @@ body {
 .social-media a {
     color: #ffffff;
     margin-left: 10px;
+    margin-right: 10px; /* Added for symmetry */
 }
 
 /* Section styles */
@@ -50,7 +55,7 @@ section {
 }
 
 section h2 {
-    color: #ff9900; /* matching the link color for consistency */
+    color: #DAA520; /* Golden color to match links */
 }
 
 /* Photo grid styles */
@@ -74,7 +79,7 @@ section h2 {
 
 footer p {
     margin: 0;
-    color: #ff9900; /* orange text to highlight the footer */
+    color: #DAA520; /* Golden text to highlight the footer */
 }
 
 /* Form styles */
@@ -95,7 +100,7 @@ input[type="text"], input[type="email"], textarea {
 }
 
 input[type="submit"] {
-    background-color: #ff9900;
+    background-color: #DAA520;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -105,12 +110,16 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #cc7a00; /* darker orange on hover */
+    background-color: #b38600; /* darker golden on hover */
 }
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
     .navbar-logo {
         height: 30px; /* Adjust logo size for smaller screens */
+    }
+    .navbar ul {
+        flex-direction: column; /* Stack the links vertically on smaller screens */
+        align-items: center; /* Ensure items are centered in vertical stack */
     }
 }
