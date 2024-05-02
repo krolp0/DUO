@@ -1,10 +1,10 @@
 /* General body styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212; /* Dark background for contrast */
-    color: #ffffff; /* White text for readability */
+    background-color: #121212;
+    color: #ffffff;
     margin: 0;
-    padding-top: 70px; /* Adjust this based on your navbar height */
+    padding-top: 70px; /* Adjust this if the navbar height changes */
 }
 
 /* Navbar styles */
@@ -12,21 +12,25 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0; /* Ensures the navbar spans the full width */
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centers navbar content horizontally */
     align-items: center;
     padding: 20px;
     background-color: #1a1a1a;
     z-index: 1000;
-    transition: top 0.3s ease; /* Smooth transition for the navbar movement */
+    transition: top 0.3s ease; /* Smooth transition for moving navbar */
 }
 
 .navbar-logo {
+    position: absolute;
+    right: 20px; /* Always keeps the logo on the right */
     height: 50px;
 }
 
 .menu-icon {
+    position: absolute;
+    left: 20px; /* Always keeps the menu icon on the left */
     display: none; /* Hidden by default, shown only in mobile view */
     cursor: pointer;
     font-size: 30px;
@@ -39,28 +43,29 @@ body {
     display: flex;
     list-style: none; /* Removes bullets from list items */
     padding: 0;
-    margin: 0;
+    margin: 0 auto; /* Centers the menu items automatically */
     align-items: center;
-    justify-content: center;
 }
 
 .navbar ul li a {
     color: #DAA520; /* Golden color for all links */
     text-decoration: none; /* Removes underline from links */
     font-weight: bold;
-    padding: 0 10px;
+    padding: 0 15px; /* Spacing between links */
 }
 
-/* Social media links */
+/* Social media links, displayed flexibly */
 .social-media {
+    position: absolute;
+    right: 80px; /* Adjust this value based on your layout */
     display: flex;
     align-items: center;
 }
 
 .social-media a {
     color: #ffffff; /* Ensuring visibility */
-    margin-left: 15px;
     font-size: 24px; /* Larger icons for better visibility */
+    margin-left: 15px;
     text-decoration: none; /* Removes underline from links */
 }
 
@@ -81,8 +86,10 @@ body {
         flex-direction: column;
         position: absolute;
         top: 60px;
-        width: 100%;
+        left: 0;
+        right: 0;
         background-color: #1a1a1a;
+        padding: 10px 0;
     }
 
     .navbar ul li {
@@ -95,58 +102,9 @@ body {
         right: 20px; /* Ensure logo is visible and properly placed */
         top: 5px; /* Adjust top positioning */
     }
-}
 
-/* Section styles */
-section {
-    padding: 40px;
-    border-bottom: 1px solid #333333; /* Subtle separation between sections */
-}
-
-/* Photo grid styles */
-.photos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-/* Contact and footer styles */
-footer, #Kontakt {
-    text-align: center;
-    padding: 20px;
-    background-color: #1a1a1a;
-}
-
-footer p {
-    color: #DAA520; /* Footer text in golden color */
-}
-
-/* Form styles */
-form div {
-    margin-bottom: 10px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"], input[type="email"], textarea {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-input[type="submit"] {
-    background-color: #DAA520;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #b38600; /* Darker shade on hover */
+    .social-media {
+        position: static; /* Allow social media icons to flow within the layout */
+        margin-top: 10px; /* Space from the last menu item */
+    }
 }
