@@ -1,10 +1,10 @@
 /* General body styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212; /* Dark background for contrast */
-    color: #ffffff; /* White text for readability */
-    margin: 0; /* Removes default margin */
-    padding-top: 70px; /* To prevent content from hiding behind the fixed navbar */
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding-top: 70px; /* Adjust this if the navbar height changes */
 }
 
 /* Navbar styles */
@@ -14,37 +14,36 @@ body {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Aligns logo and menu icon on the sides */
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: #1a1a1a;
     z-index: 1000;
+    transition: top 0.3s; /* Added smooth transition for the navbar */
 }
 
 .navbar-logo {
-    display: block; /* Always display the logo */
-    height: 50px; /* Standard height */
+    height: 50px;
     position: absolute;
-    right: 20px; /* Positioned on the right */
+    right: 20px;
 }
 
 .menu-icon {
-    display: none; /* Hidden by default, only shown in mobile view */
+    display: none;
     cursor: pointer;
     position: absolute;
-    left: 20px; /* Positioned on the left */
-    font-size: 30px; /* Icon size */
+    left: 20px;
+    font-size: 30px;
     color: #ffffff;
 }
 
 .navbar ul {
-    display: none; /* Hide links by default */
+    display: none;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/* Social media links */
 .social-media {
     display: flex;
     align-items: center;
@@ -58,7 +57,7 @@ body {
 /* Section styles */
 section {
     padding: 40px;
-    border-bottom: 1px solid #333333; /* Subtle separation between sections */
+    border-bottom: 1px solid #333333;
 }
 
 /* Photo grid styles */
@@ -76,7 +75,6 @@ footer, #Kontakt {
 }
 
 footer p {
-    margin: 0;
     color: #DAA520;
 }
 
@@ -107,32 +105,32 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #b38600; /* darker golden on hover */
+    background-color: #b38600;
 }
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
     .menu-icon {
-        display: block; /* Show the menu icon only on mobile */
+        display: block;
     }
 
     .navbar ul {
-        display: flex; /* Flex to use below properties */
+        display: flex;
         flex-direction: column;
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
         background-color: #1a1a1a;
-        padding: 10px 0; /* Padding for visual spacing */
+        padding: 10px 0;
     }
 
     .navbar ul li {
-        text-align: center; /* Center text for a clean look */
-        padding: 10px; /* Spacing for better touch targets */
+        text-align: center;
+        padding: 10px;
     }
 
     .navbar-logo, .social-media {
-        display: none; /* Hide elements in the dropdown */
+        display: none;
     }
 }
