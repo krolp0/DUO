@@ -4,7 +4,7 @@ body {
     background-color: #121212;
     color: #ffffff;
     margin: 0;
-    padding-top: 70px; /* Adjust this if the navbar height changes */
+    padding-top: 70px; /* Adjust this based on your navbar height */
 }
 
 /* Navbar styles */
@@ -19,120 +19,79 @@ body {
     padding: 20px;
     background-color: #1a1a1a;
     z-index: 1000;
-    transition: top 0.3s ease; /* Smooth transition for the navbar movement */
+    transition: top 0.3s ease; /* Smooth transition for moving navbar */
 }
 
 .navbar-logo {
     height: 50px;
-    position: absolute;
-    right: 20px;
 }
 
 .menu-icon {
-    display: none;
+    display: none; /* Hidden by default, shown only in mobile view */
     cursor: pointer;
-    position: absolute;
-    left: 20px;
     font-size: 30px;
     color: #ffffff;
-    z-index: 1001; // Ensure the menu icon stays above the navbar content
+    z-index: 1002; /* Ensure it is above other content */
 }
 
+/* Always display the links on desktop */
 .navbar ul {
-    display: flex;  // Display flex by default to keep it on desktop
+    display: flex;
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
 }
 
+.navbar ul li a {
+    color: #DAA520;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* Social media links */
 .social-media {
     display: flex;
     align-items: center;
 }
 
 .social-media a {
-    color: #ffffff;
+    color: #ffffff; /* Ensuring visibility */
     margin-left: 15px;
+    font-size: 24px; /* Larger icons for visibility */
 }
 
-/* Section styles */
-section {
-    padding: 40px;
-    border-bottom: 1px solid #333333;
-}
-
-/* Photo grid styles */
-.photos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-/* Contact and footer styles */
-footer, #Kontakt {
-    text-align: center;
-    padding: 20px;
-    background-color: #1a1a1a;
-}
-
-footer p {
-    color: #DAA520;
-}
-
-/* Form styles */
-form div {
-    margin-bottom: 10px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"], input[type="email"], textarea {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-input[type="submit"] {
-    background-color: #DAA520;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #b38600;
-}
-
-/* Media Queries for responsiveness */
+/* Media Queries for mobile adjustments */
 @media (max-width: 768px) {
     .menu-icon {
-        display: block; // Show menu icon
+        display: block; /* Show menu icon on mobile */
     }
 
-    .navbar ul {
-        display: none; // Hide the menu initially on mobile
+    .navbar ul,
+    .social-media {
+        display: none; /* Hide by default on mobile */
+    }
+
+    .navbar.active .navbar ul,
+    .navbar.active .social-media {
+        display: flex; /* Show when active */
         flex-direction: column;
         position: absolute;
-        top: 60px; // Adjust this value based on actual navbar height
-        left: 0;
+        top: 60px;
         width: 100%;
         background-color: #1a1a1a;
-        padding: 10px 0;
-        transition: all 0.3s ease; // Smooth transition for the dropdown
     }
 
     .navbar ul li {
-        text-align: center;
+        text-align: center; /* Center items in mobile menu */
         padding: 10px;
     }
 
-    .navbar-logo, .social-media {
-        display: block;  // Ensure logo is visible on mobile
+    .navbar-logo {
+        position: absolute;
+        right: 20px; /* Ensure logo is visible and properly placed */
+        top: 5px; /* Adjust top positioning */
     }
 }
