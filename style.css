@@ -1,10 +1,11 @@
 /* General body styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212; /* dark background for contrast */
-    color: #ffffff; /* white text for readability */
+    background-color: #121212; /* Dark background for contrast */
+    color: #ffffff; /* White text for readability */
     margin: 0; /* Removes default margin */
     padding-top: 70px; /* To prevent content from hiding behind the fixed navbar */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Navbar styles */
@@ -14,50 +15,25 @@ body {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Aligns navbar content */
-    align-items: center;
+    justify-content: space-between; /* Ensures content is spaced out */
+    align-items: center; /* Vertically centers the content */
     padding: 20px;
-    background-color: #1a1a1a;
+    background-color: #1a1a1a; /* Dark background for the navbar */
     z-index: 1000; /* Ensures navbar stays on top of other content */
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    align-items: center;
+    justify-content: center; /* Centers navbar items horizontally */
+    align-items: center; /* Aligns navbar items vertically */
     padding: 0;
     margin: 0;
+    width: 100%; /* Ensures full width for center alignment */
 }
-.menu-icon {
-    display: none; /* Hide menu icon by default */
-    cursor: pointer;
-    font-size: 30px; /* Icon size */
-    color: #ffffff;
-}
-
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block; /* Show menu icon on mobile */
-    }
-
-    .nav-links {
-        display: none; /* Hide links initially on mobile */
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px; /* Adjust according to your header's height */
-        left: 0;
-        background-color: #1a1a1a; /* Match navbar background */
-    }
-
-    .navbar ul {
-        flex-direction: column;
-    }
-}
-
 
 .navbar ul li {
-    padding: 0 10px;
+    padding: 0 15px; /* Adjusts horizontal padding for spacing */
 }
 
 .navbar ul li a {
@@ -67,14 +43,20 @@ body {
 }
 
 .navbar-logo {
-    height: 50px; /* Initial height for the desktop */
+    height: 50px; /* Standard height for desktop */
     transition: height 0.3s ease; /* Smooth transition for resizing */
 }
 
 /* Social media links */
+.social-media {
+    display: flex;
+    align-items: center; /* Centers social icons vertically */
+}
+
 .social-media a {
     color: #ffffff;
-    margin: 0 10px;
+    margin: 0 10px; /* Space between social icons */
+    font-size: 24px; /* Icon size for better visibility */
 }
 
 /* Section styles */
@@ -129,29 +111,29 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #b38600; /* darker golden on hover */
+    background-color: #b38600; /* Darker golden on hover */
 }
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
-    .navbar ul {
-        display: none; /* Initially hide the menu on mobile */
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px; /* Position below the menu icon */
-        left: 0;
-        background-color: #1a1a1a; /* Ensure it matches the navbar color */
-    }
-
     .menu-icon {
         display: block; /* Show the menu icon only on mobile */
         cursor: pointer;
         color: #ffffff;
-        font-size: 30px; /* Icon size */
+        font-size: 30px; /* Icon size for mobile */
+    }
+
+    .navbar ul {
+        display: none; /* Initially hide the menu on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Position below the menu icon */
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a; /* Ensure it matches the navbar color */
     }
 
     .navbar-logo {
-        height: 40px; /* Smaller logo on mobile */
+        height: 40px; /* Smaller logo on mobile for better fit */
     }
 }
