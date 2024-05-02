@@ -1,8 +1,8 @@
 /* General body styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
+    background-color: #121212; /* Dark background for contrast */
+    color: #ffffff; /* White text for readability */
     margin: 0;
     padding-top: 70px; /* Adjust this based on your navbar height */
 }
@@ -19,7 +19,7 @@ body {
     padding: 20px;
     background-color: #1a1a1a;
     z-index: 1000;
-    transition: top 0.3s ease; /* Smooth transition for moving navbar */
+    transition: top 0.3s ease; /* Smooth transition for the navbar movement */
 }
 
 .navbar-logo {
@@ -34,10 +34,10 @@ body {
     z-index: 1002; /* Ensure it is above other content */
 }
 
-/* Always display the links on desktop */
+/* Link styling */
 .navbar ul {
     display: flex;
-    list-style: none;
+    list-style: none; /* Removes bullets from list items */
     padding: 0;
     margin: 0;
     align-items: center;
@@ -45,8 +45,8 @@ body {
 }
 
 .navbar ul li a {
-    color: #DAA520;
-    text-decoration: none;
+    color: #DAA520; /* Golden color for all links */
+    text-decoration: none; /* Removes underline from links */
     font-weight: bold;
     padding: 0 10px;
 }
@@ -60,7 +60,8 @@ body {
 .social-media a {
     color: #ffffff; /* Ensuring visibility */
     margin-left: 15px;
-    font-size: 24px; /* Larger icons for visibility */
+    font-size: 24px; /* Larger icons for better visibility */
+    text-decoration: none; /* Removes underline from links */
 }
 
 /* Media Queries for mobile adjustments */
@@ -94,4 +95,58 @@ body {
         right: 20px; /* Ensure logo is visible and properly placed */
         top: 5px; /* Adjust top positioning */
     }
+}
+
+/* Section styles */
+section {
+    padding: 40px;
+    border-bottom: 1px solid #333333; /* Subtle separation between sections */
+}
+
+/* Photo grid styles */
+.photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Contact and footer styles */
+footer, #Kontakt {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+}
+
+footer p {
+    color: #DAA520; /* Footer text in golden color */
+}
+
+/* Form styles */
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #DAA520;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #b38600; /* Darker shade on hover */
 }
