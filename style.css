@@ -24,7 +24,7 @@ body {
 
 .navbar-logo {
     position: absolute;
-    right: 20px; /* Always keeps the logo on the right */
+    right: 30px; /* Always keeps the logo on the right */
     height: 50px;
 }
 
