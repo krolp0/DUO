@@ -1,11 +1,10 @@
 /* General body styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212; /* Dark background for contrast */
-    color: #ffffff; /* White text for readability */
+    background-color: #121212; /* dark background for contrast */
+    color: #ffffff; /* white text for readability */
     margin: 0; /* Removes default margin */
-    padding-top: 70px; /* To prevent content from hiding behind the fixed navbar */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    padding-top: 70px; /* to avoid navbar overlap */
 }
 
 /* Navbar styles */
@@ -15,63 +14,93 @@ body {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    padding: 20px;
+    justify-content: space-between; /* ensures content is aligned with space between */
+    align-items: center;
+    padding: 0 20px; /* padding on both sides */
     background-color: #1a1a1a;
     z-index: 1000;
 }
 
 .navbar-logo {
-    position: absolute;
-    left: 20px; /* Logo at the left */
-    height: 50px; /* Standard height */
+    height: 50px; /* appropriate height for the logo */
+    transition: height 0.3s ease;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    align-items: center;
-    padding: 0;
     margin: 0;
-    width: 100%; /* Ensures full width */
+    padding: 0;
 }
 
 .navbar ul li {
-    padding: 0 15px; /* Spacing between items */
+    margin: 0 20px; /* spacing between menu items */
 }
 
 .navbar ul li a {
-    color: #DAA520; /* Golden color for links */
+    color: #DAA520; /* golden color for links */
     text-decoration: none;
     font-weight: bold;
 }
 
+/* Social media links */
 .social-media {
-    position: absolute;
-    right: 20px; /* Social media links at the right */
+    display: flex;
+    align-items: center;
 }
 
 .social-media a {
     color: #ffffff;
-    margin: 0 10px;
-    font-size: 24px; /* Larger icons for better accessibility */
+    margin-left: 15px;
 }
 
-/* Section styles */
+/* Adjustments for mobile views */
+.menu-icon {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 30px; /* size of menu icon */
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center; /* Centering navbar items */
+    }
+
+    .menu-icon {
+        display: block; /* Display menu icon on mobile */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%; /* full width */
+        display: none; /* Hide initially */
+        position: absolute;
+        top: 70px; /* Positioned below the navbar */
+        left: 0;
+        background-color: #1a1a1a;
+        padding: 10px 0; /* Padding inside the dropdown */
+    }
+
+    .navbar ul li {
+        text-align: center; /* Centering text within each dropdown item */
+        padding: 10px 0; /* Adding vertical padding for spacing */
+    }
+
+    .navbar-logo, .social-media {
+        display: none; /* Hide elements in the dropdown */
+    }
+}
+
+/* Section and other styles */
 section {
     padding: 40px;
-    border-bottom: 1px solid #333333; /* Subtle separation between sections */
+    border-bottom: 1px solid #333333;
 }
 
-/* Photo grid styles */
-.photos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-/* Contact and footer styles */
 footer, #Kontakt {
     text-align: center;
     padding: 20px;
@@ -79,18 +108,11 @@ footer, #Kontakt {
 }
 
 footer p {
-    margin: 0;
     color: #DAA520;
 }
 
-/* Form styles */
 form div {
     margin-bottom: 10px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
 }
 
 input[type="text"], input[type="email"], textarea {
@@ -110,38 +132,5 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #b38600; /* Darker golden on hover */
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block; /* Show the menu icon only on mobile */
-        cursor: pointer;
-        color: #ffffff;
-        font-size: 30px;
-        position: absolute;
-        right: 20px; /* Positioning it on the right side */
-        top: 20px;
-    }
-
-    .navbar ul {
-        display: none; /* Initially hide the menu on mobile */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #1a1a1a;
-    }
-
-    .navbar ul li {
-        width: 100%; /* Full width for each item */
-        text-align: center; /* Center text within each item */
-        padding: 10px 0; /* Add vertical padding for tap targets */
-    }
-
-    .navbar-logo, .social-media {
-        display: none; /* Hide logo and social media in dropdown */
-    }
+    background-color: #b38600; /* darker shade for hover effect */
 }
