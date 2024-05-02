@@ -1,110 +1,69 @@
-/* General body styles */
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    margin: 0;
-    padding-top: 70px; /* Adjust this if the navbar height changes */
+    background-image: url('DSC_3685.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
 }
 
-/* Navbar styles */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0; /* Ensures the navbar spans the full width */
+header {
     display: flex;
-    justify-content: center; /* Centers navbar content horizontally */
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #1a1a1a;
-    z-index: 1000;
-    transition: top 0.3s ease; /* Smooth transition for moving navbar */
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
 }
 
-.navbar-logo {
-    position: absolute;
-    right: 30px; /* Always keeps the logo on the right */
-    height: 50px;
-}
-
-.menu-icon {
-    position: absolute;
-    left: 20px; /* Always keeps the menu icon on the left */
-    display: none; /* Hidden by default, shown only in mobile view */
+.navbar .menu-icon {
+    display: none;
+    font-size: 24px;
     cursor: pointer;
-    font-size: 30px;
-    color: #ffffff;
-    z-index: 1002; /* Ensure it is above other content */
 }
 
-/* Link styling */
-.navbar ul {
+.nav-links {
     display: flex;
-    list-style: none; /* Removes bullets from list items */
-    padding: 0;
-    margin: 0 auto; /* Centers the menu items automatically */
-    align-items: center;
+    gap: 15px;
 }
 
-.navbar ul li a {
-    color: #DAA520; /* Golden color for all links */
-    text-decoration: none; /* Removes underline from links */
-    font-weight: bold;
-    padding: 0 15px; /* Spacing between links */
-}
-
-/* Social media links, displayed flexibly */
-.social-media {
-    position: absolute;
-    right: 80px; /* Adjust this value based on your layout */
-    display: flex;
-    align-items: center;
+.nav-links a {
+    text-decoration: none;
+    color: white;
 }
 
 .social-media a {
-    color: #ffffff; /* Ensuring visibility */
-    font-size: 24px; /* Larger icons for better visibility */
-    margin-left: 15px;
-    text-decoration: none; /* Removes underline from links */
+    color: white;
+    margin-left: 10px;
 }
 
-/* Media Queries for mobile adjustments */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
 @media (max-width: 768px) {
-    .menu-icon {
-        display: block; /* Show menu icon on mobile */
+    .navbar .menu-icon {
+        display: block;
     }
-
-    .navbar ul,
-    .social-media {
-        display: none; /* Hide by default on mobile */
-    }
-
-    .navbar.active .navbar ul,
-    .navbar.active .social-media {
-        display: flex; /* Show when active */
+    .nav-links {
+        display: none;
         flex-direction: column;
+        width: 100%;
         position: absolute;
         top: 60px;
         left: 0;
-        right: 0;
-        background-color: #1a1a1a;
-        padding: 10px 0;
+        background: rgba(0, 0, 0, 0.9);
     }
-
-    .navbar ul li {
-        text-align: center; /* Center items in mobile menu */
+    .nav-links a {
         padding: 10px;
-    }
-
-    .navbar-logo {
-        position: absolute;
-        right: 20px; /* Ensure logo is visible and properly placed */
-        top: 5px; /* Adjust top positioning */
-    }
-
-    .social-media {
-        position: static; /* Allow social media icons to flow within the layout */
-        margin-top: 10px; /* Space from the last menu item */
+        text-align: center;
+        display: block;
     }
 }
