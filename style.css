@@ -19,7 +19,7 @@ body {
     padding: 20px;
     background-color: #1a1a1a;
     z-index: 1000;
-    transition: top 0.3s; /* Added smooth transition for the navbar */
+    transition: top 0.3s ease; /* Smooth transition for the navbar movement */
 }
 
 .navbar-logo {
@@ -35,7 +35,9 @@ body {
     left: 20px;
     font-size: 30px;
     color: #ffffff;
+    z-index: 1001; // Ensure the menu icon stays above the navbar content
 }
+
 
 .navbar ul {
     display: none;
@@ -115,14 +117,15 @@ input[type="submit"]:hover {
     }
 
     .navbar ul {
-        display: flex;
+        display: none; // Initially hide the menu
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 60px; // Adjust this value based on actual navbar height
         left: 0;
         width: 100%;
         background-color: #1a1a1a;
         padding: 10px 0;
+        transition: all 0.3s ease; // Smooth transition for the dropdown
     }
 
     .navbar ul li {
