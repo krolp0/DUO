@@ -121,36 +121,34 @@
     <footer>
         <p>© 2023 DJ Duo. Wszystkie prawa zastrzeżone.</p>
     </footer>
-<script>
-function toggleMenu() {
-    var links = document.querySelector('.nav-links');
-    if (links.style.display === 'block') {
-        links.style.display = 'none';
-    } else {
-        links.style.display = 'block';
+    <script>
+    function toggleMenu() {
+        var links = document.querySelector('.nav-links');
+        if (links.style.display === 'block') {
+            links.style.display = 'none';
+        } else {
+            links.style.display = 'block';
+        }
     }
-}
-</script>
-<script>
-let lastScrollTop = 0;
-let navbarHeight = document.querySelector('.navbar').offsetHeight; // Get the dynamic height of the navbar
+    </script>
+    <script>
+    let lastScrollTop = 0;
+    let navbarHeight = document.querySelector('.navbar').offsetHeight; // Get the dynamic height of the navbar
 
-function handleScroll() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop && scrollTop > navbarHeight) { // Ensures navbar hides only when scrolling down and user has scrolled more than navbar height
-        document.querySelector('.navbar').style.top = -navbarHeight + 'px'; // Move navbar up by its height
-    } else {
-        document.querySelector('.navbar').style.top = '0'; // Move navbar to its default position
+    function handleScroll() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop && scrollTop > navbarHeight) { // Ensures navbar hides only when scrolling down and user has scrolled more than navbar height
+            document.querySelector('.navbar').style.top = -navbarHeight + 'px'; // Move navbar up by its height
+        } else {
+            document.querySelector('.navbar').style.top = '0'; // Move navbar to its default position
+        }
+        lastScrollTop = scrollTop;
+        requestAnimationFrame(handleScroll);
     }
-    lastScrollTop = scrollTop;
-    requestAnimationFrame(handleScroll);
-}
 
-document.addEventListener('DOMContentLoaded', function() { // Ensure the script runs after the document is fully loaded
-    handleScroll();
-});
-</script>
-
-
+    document.addEventListener('DOMContentLoaded', function() { // Ensure the script runs after the document is fully loaded
+        handleScroll();
+    });
+    </script>
 </body>
 </html>
