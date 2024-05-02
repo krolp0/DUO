@@ -133,17 +133,24 @@ function toggleMenu() {
 </script>
 <script>
 let lastScrollTop = 0;
-window.addEventListener("scroll", function() {
-    var navbar = document.querySelector('.navbar');
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-        navbar.style.top = "-70px"; // Adjust this value based on the height of your navbar
+let navbarHeight = document.querySelector('.navbar').offsetHeight; // Get the dynamic height of the navbar
+
+function handleScroll() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop && scrollTop > navbarHeight) { // Ensures navbar hides only when scrolling down and user has scrolled more than navbar height
+        document.querySelector('.navbar').style.top = -navbarHeight + 'px'; // Move navbar up by its height
     } else {
-        navbar.style.top = "0";
+        document.querySelector('.navbar').style.top = '0'; // Move navbar to its default position
     }
     lastScrollTop = scrollTop;
+    requestAnimationFrame(handleScroll);
+}
+
+document.addEventListener('DOMContentLoaded', function() { // Ensure the script runs after the document is fully loaded
+    handleScroll();
 });
 </script>
+
 
 </body>
 </html>
